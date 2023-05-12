@@ -17,30 +17,31 @@
             </ul>
           </div>
           <div class="card-body">
-            <form action="/rota_aluno/aluno/novo" method="POST">
+            <form action="/rota_aluno/aluno/nova" method="POST">
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default" for="descricao">Matricula: </span>
                 <input type="text" id="matricula" name="matricula" placeholder="Digite a Matricula" class="form-control"
-                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default" for="descricao">Nome: </span>
                 <input type="text" id="nome" name="nome" placeholder="Digite o nome do Aluno" class="form-control"
-                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default" for="descricao">Turma: </span>
-                <select type="text" id="turmas" name="turmas"
-                  class="form-control form-select" aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-default">
+                <select type="text" id="fk_turma" name="fk_turma" class="form-control form-select"
+                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  <option>Selecione uma Turma</option>
                   {{#each turmas}}
                   <option value="{{id_turma}}">{{descricao}}</option>
                   {{/each}}
                 </select>
               </div>
+
 
               <button type="submit" class="btn btn-success">Cadastrar Aluno</button>
 

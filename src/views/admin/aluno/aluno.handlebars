@@ -27,7 +27,6 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Log</th>
                                     <th scope="col">Matricula</th>
                                     <th scope="col">Nome</th>
                                     <th scope="col">Turma</th>
@@ -40,10 +39,9 @@
                                 <tr>
 
                                     <th scope="row">{{id_aluno}}</th>
-                                    <td>{{createdAt}}</td>
                                     <td>{{matricula}}</td>
                                     <td>{{nome}}</td>
-                                    <td>{{fk_turma}}</td>
+                                    <td>{{descricao}}</td>
                                     <td><a href="/rota_aluno/editar_aluno/{{id_aluno}}" class="btn btn-primary"><i
                                                 class="bi bi-pencil-square"></i> Editar</a></td>
                                     <td><a href="/rota_aluno/deletar_aluno{{id_aluno}}" class="btn btn-danger"><i

@@ -3,16 +3,18 @@ const router = express.Router();
 //vamos carregar nosso modelo
 const Turma = require("../models/Turma");
 const Aluno = require("../models/Aluno");
+
 //_____________ Rotas dos Alunos __________________
+
 //Carregando todos os Alunos
 router.get('/aluno', (req, res) => {
     Aluno.sequelize.query("select * from selecAluno",
         { model: Aluno }).then(function (alunos) {
             var nalunos = JSON.parse(JSON.stringify(alunos));
-            res.render("admin/aluno/aluno",
-                { alunos: nalunos });
+            res.render("admin/aluno/aluno", { alunos: nalunos });
         });
 });
+
 //Deletando o aluno
 router.get('/deletar_aluno/:id', (req, res) => {
     Aluno.destroy({ where: { 'id_aluno': req.params.id } }).then(() => {
@@ -21,6 +23,7 @@ router.get('/deletar_aluno/:id', (req, res) => {
         res.render("Esse aluno não existe");
     });
 });
+
 //abre e preenche o form de edição do aluno
 router.get('/editar_aluno/:id', (req, res) => {
     Aluno.findAll({ where: { 'id_aluno': req.params.id } }).then((alunos) => {
@@ -34,6 +37,7 @@ router.get('/editar_aluno/:id', (req, res) => {
         });
     });
 });
+
 //Edita os dados do Aluno
 router.post('/aluno/editar_aluno', (req, res) => {
     Aluno.update({
@@ -49,13 +53,23 @@ router.post('/aluno/editar_aluno', (req, res) => {
             res.send("Este aluno não existe " + erro);
         });
 });
+
 //rota do form para add aluno
 router.get('/aluno/add', (req, res) => {
-    res.render("admin/aluno/addaluno");
+
+
+    Turma.findAll().then((turmas) => {
+        turmas = turmas.map((turma) => {
+            return turma.toJSON();
+        });
+        res.render("admin/aluno/addaluno", { turmas: turmas });
+    });
+
 });
+
 //rota do botão do form para criar o aluno
 router.post('/aluno/nova', (req, res) => {
-    Turma.create({
+    Aluno.create({
         matricula: req.body.matricula,
         nome: req.body.nome,
         fk_turma: req.body.fk_turma
