@@ -1,0 +1,67 @@
+<main>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <div class="card border-secondary mb-3">
+                    <div class="card-header">
+
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active">Alunos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/rota_turma/turma">Turmas</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-6 header-cad"> <a href="/rota_aluno/aluno/add"
+                                class="btn btn-success"><i class="bi bi-plus"></i> Cadastrar aluno</a> </div>
+                        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"></div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text"></p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Log</th>
+                                    <th scope="col">Matricula</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Turma</th>
+                                    <th scope="col">Editar</th>
+                                    <th scope="col">Excluir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each alunos}}
+                                <tr>
+
+                                    <th scope="row">{{id_aluno}}</th>
+                                    <td>{{createdAt}}</td>
+                                    <td>{{matricula}}</td>
+                                    <td>{{nome}}</td>
+                                    <td>{{fk_turma}}</td>
+                                    <td><a href="/rota_aluno/editar_aluno/{{id_aluno}}" class="btn btn-primary"><i
+                                                class="bi bi-pencil-square"></i> Editar</a></td>
+                                    <td><a href="/rota_aluno/deletar_aluno{{id_aluno}}" class="btn btn-danger"><i
+                                                class="bi bi-trash"></i> Deletar</a></td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                            <!--tfoot>
+                                
+                                <tr>
+                                    <th scope="row">Quantidade de alunos cadastradas: </th>
+                                    <td>Mark</td>
+                                </tr>
+                            </tfoot-->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

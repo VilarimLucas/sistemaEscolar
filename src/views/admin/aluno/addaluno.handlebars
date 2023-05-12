@@ -1,0 +1,53 @@
+<main>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="card border-secondary mb-3">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link" href="/rota_aluno/aluno">Alunos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/rota_turma/turma">Turmas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active">Cadastrar Aluno</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <form action="/rota_aluno/aluno/novo" method="POST">
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default" for="descricao">Matricula: </span>
+                <input type="text" id="matricula" name="matricula" placeholder="Digite a Matricula" class="form-control"
+                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default" for="descricao">Nome: </span>
+                <input type="text" id="nome" name="nome" placeholder="Digite o nome do Aluno" class="form-control"
+                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default" for="descricao">Turma: </span>
+                <select type="text" id="turmas" name="turmas"
+                  class="form-control form-select" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default">
+                  {{#each turmas}}
+                  <option value="{{id_turma}}">{{descricao}}</option>
+                  {{/each}}
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-success">Cadastrar Aluno</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
