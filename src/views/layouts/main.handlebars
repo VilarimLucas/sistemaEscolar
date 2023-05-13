@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initialscale=1.0">
 
-    <!-- BOOTSTRAP STYLE -->
+    <!-- CSS STYLE -->
     <link rel="stylesheet" href="/style/stylesheet.css">
 
     <!-- BOOTSTRAP STYLE -->
@@ -24,9 +24,17 @@
 </head>
 
 <body>
+    {{>_navbar}}
+
+    {{#if car}}
+    {{>carousel}}
+    {{else}}
+    {{/if}}
+
     <div class="container mt-4">
         {{{body}}}
     </div>
+    {{>_footer}}
 </body>
 
 </html>
