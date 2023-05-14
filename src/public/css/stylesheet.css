@@ -50,10 +50,20 @@ b {
     font-family: 'LobsterTwo-Regular';
 }
 
+
 /* BANNER */
 
 .carousel {
     width: 100%;
+}
+
+.carousel .carousel-inner .carousel-item .carousel-caption h5 {
+    font-size: 2.8rem;
+}
+
+.carousel .carousel-inner .carousel-item .carousel-caption p {
+    font-size: 1.8rem;
+    font-family: 'ABeeZee-Italic';
 }
 
 .carousel-inner .carousel-item {
@@ -78,7 +88,7 @@ b {
 
 /* TABLE */
 
-table{
+table {
     text-align: justify;
 }
 
@@ -94,6 +104,6 @@ main .header-cad {
     margin: 1%;
 }
 
-.card-turma{
-    margin-bottom: 10px;
+.card-turma {
+    margin-bottom: 8%;
 }
