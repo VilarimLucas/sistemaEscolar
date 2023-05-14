@@ -19,6 +19,7 @@ app.use('/bootstrapIcons', express.static('public/bootstrap/icons/font'));
 app.use('/images', express.static('public/img'));
 app.use('/bootstrapScript', express.static('public/bootstrap/js'));
 app.use('/style', express.static('public/css'));
+app.use('/fonts', express.static('public/fonts'));
 
 //Remanejando Rotas admin
 app.use('/', admin);
@@ -29,10 +30,7 @@ app.use('/rota_turma', rota_turma);
 //Remanejando Rotas de Turma
 app.use('/rota_aluno', rota_aluno);
 
-// Caminho Principal
-app.get('/', (req, res)=>{
-    res.render('index', {car:true});
-});
+
 
 
 const PORT = 8081;

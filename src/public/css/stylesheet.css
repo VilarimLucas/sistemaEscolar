@@ -1,10 +1,63 @@
+@font-face {
+    font-family: 'Pacifico-Regular';
+    src: url('/fonts/Pacifico/Pacifico-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LobsterTwo-Bold';
+    src: url('/fonts/Lobster_Two/LobsterTwo-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LobsterTwo-BoldItalic';
+    src: url('/fonts/Lobster_Two/LobsterTwo-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LobsterTwo-Italic';
+    src: url('/fonts/Lobster_Two/LobsterTwo-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LobsterTwo-Regular';
+    src: url('/fonts/Lobster_Two/LobsterTwo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ABeeZee-Regular';
+    src: url('/fonts/ABeeZee/ABeeZee-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ABeeZee-Italic';
+    src: url('/fonts/ABeeZee/ABeeZee-Italic.ttf') format('truetype');
+}
+
+* {
+    font-family: 'ABeeZee-Regular';
+    font-size: 16px;
+}
+
+h1 {
+    font-family: 'Pacifico-Regular';
+}
+
+h5 {
+    font-family: 'LobsterTwo-Bold';
+}
+
+b {
+    font-family: 'LobsterTwo-Regular';
+}
 
 /* BANNER */
 
-.carousel-inner .carousel-item {
-
-    position: relative;
+.carousel {
     width: 100%;
+}
+
+.carousel-inner .carousel-item {
+    position: relative;
     padding-top: 18%;
     padding-bottom: 18%;
 }
@@ -21,9 +74,26 @@
     filter: brightness(0.4);
 }
 
+/* FIM BANNER */
 
+/* TABLE */
 
-main .header-cad{
+table{
+    text-align: justify;
+}
+
+table th {
+    font-family: 'LobsterTwo-BoldItalic';
+    font-size: 1.3rem;
+}
+
+/* FIM TABLE */
+
+main .header-cad {
     text-align: left;
-    margin:1%;
+    margin: 1%;
+}
+
+.card-turma{
+    margin-bottom: 10px;
 }

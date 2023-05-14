@@ -1,16 +1,79 @@
-{{>carousel}}
-
 <main>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <h1>Turmas</h1>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        {{#each turmas}}
+        <div class="col">
+            <div class="card text-bg-dark card-turma">
+                <img src="/images/00-2.png" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title"><a href="/rota_turma/turma" class="list-group-item list-group-item-secondary">{{descricao}}</a></h5>
+                    <p class="card-text"></p>
+                    <p class="card-text"><small></small></p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <br>
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold">Sistema de Locadora</h1>
+            <h1 class="display-5 fw-bold">Sistema de Alunos</h1>
             <p class="col-md-8 fs-4">Seja bem-vindo ao nosso sistema
-                de locadora de produtos. Esperamos atender todas as necessidades
-                dos nossos clientes.
+                escolar. Esperamos atender todas as necessidades
+                dos nossos Alunos.
             </p>
-            <a href="">
-                <button class="btn btn-primary btn-lg" type="button">Veja mais fotos</button>
-            </a>
+            <a href="/rota_aluno/aluno" class="btn btn-primary btn-lg">Gerenciar Alunos</a>
         </div>
+
+        <div class="row">
+            <h1 class="display-5 fw-bold">Fotos da Escola</h1>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+                <div class="col">
+                    <img src="/images/escola1.jpeg" class="img-fluid" alt="...">
+                </div>
+                <div class="col">
+                    <img src="/images/escola2.png" class="img-fluid" alt="...">
+                </div>
+                <div class="col">
+                    <img src="/images/escola3.jpg" class="img-fluid" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <h1>Alunos</h1>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+        {{#each alunos}}
+        <div class="col">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/images/00.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{nome}}</h5>
+                            <p class="card-text">
+                                <b>Matricula: </b>{{matricula}}
+                                <br>
+                                <b>Turma: </b>{{descricao}}
+                            </p>
+                            <a href="/rota_aluno/editar_aluno/{{id_aluno}}" class="btn btn-primary"><i
+                                    class="bi bi-pencil-square"></i> Editar</a>
+                            <a href="/rota_aluno/deletar_aluno/{{id_aluno}}" class="btn btn-danger"><i
+                                    class="bi bi-trash"></i> Deletar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
     </div>
 </main>

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 //vamos carregar nosso modelo
 const Turma = require("../models/Turma");
 const Aluno = require("../models/Aluno");
