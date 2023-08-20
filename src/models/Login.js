@@ -23,5 +23,5 @@ const Login = db.sequelize.define('login', {
     //o nome da tabela sem o S
 }, { freezeTableName: true });
 
-// Login.sync({ force: true });
+//  Login.sync({ force: true });
 module.exports = Login;

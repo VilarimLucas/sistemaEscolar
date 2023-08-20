@@ -17,7 +17,7 @@ router.get('/aluno', (req, res) => {
 });
 
 //Deletando o aluno
-router.get('/deletar_aluno/:id', (req, res) => {
+router.delete('/deletar_aluno/:id', (req, res) => {
     Aluno.destroy({ where: { 'id_aluno': req.params.id } }).then(() => {
         res.redirect("/rota_aluno/aluno");
     }).catch((err) => {
@@ -26,7 +26,7 @@ router.get('/deletar_aluno/:id', (req, res) => {
 });
 
 //abre e preenche o form de edição do aluno
-router.get('/editar_aluno/:id', (req, res) => {
+router.put('/editar_aluno/:id', (req, res) => {
     Aluno.findAll({ where: { 'id_aluno': req.params.id } }).then((alunos) => {
         Turma.findAll().then((turmas) => {
             var nturmas = JSON.parse(JSON.stringify(turmas));
@@ -80,5 +80,6 @@ router.post('/aluno/nova', (req, res) => {
         res.send('Houve um erro: ' + erro);
     });
 });
+
 //______ Fim das rotas do aluno ___________
 module.exports = router;

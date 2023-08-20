@@ -12,7 +12,7 @@ router.post('/login/nova', (req, res) => {
         senha: req.body.password,
         nivel: 2
     }).then(() => {
-        res.redirect("/login");
+        res.redirect("/");
     }).catch((erro) => {
         res.send('Houve um erro: ' + erro);
     });
@@ -43,6 +43,15 @@ router.post('/login/auth',async  (req, res) => {
     }
 });
 
+router.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error('Error logging out:', err);
+      }
+      res.redirect('/');
+    });
+  });
+  
 
 
 //______ Fim das rotas do aluno ___________
