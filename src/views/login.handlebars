@@ -1,0 +1,72 @@
+<style>
+    body {
+        background-color: #f8f9fa;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .header {
+
+        padding: 20px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .footer {
+
+        padding: 10px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .content {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-form {
+        max-width: 400px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<div class="header">
+    <h1><i class="bi bi-journals"></i> Sistema Escolar</h1>
+    <p>Faça login para acessar o sistema</p>
+</div>
+
+<div class="content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-form">
+                    <h2 class="mb-4">Login</h2>
+                    <form action="/rota_login/login/auth" method="post">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuário</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </form>
+                    <br>
+                    <a href="/cadlogin">Não sou cadastrado</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2023 Sistema Escolar. Todos os direitos reservados.</p>
+</div>

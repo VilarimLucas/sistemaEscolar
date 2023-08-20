@@ -24,7 +24,11 @@
 </head>
 
 <body>
+
+    {{#if login}}
+    {{else}}
     {{>_navbar}}
+    {{/if}}
 
     {{#if car}}
     {{>carousel}}
@@ -35,7 +39,10 @@
         {{{body}}}
     </div>
 
+    {{#if login}}
+    {{else}}
     {{>_footer}}
+    {{/if}}
 </body>
 
 </html>

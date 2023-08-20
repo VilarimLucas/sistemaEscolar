@@ -3,7 +3,7 @@ const router = express.Router();
 const Aluno = require("../models/Aluno");
 const Turma = require("../models/Turma");
 
-router.get('/', (req, res) => {
+router.get('/home', (req, res) => {
 
 
 
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
                 turmas = turmas.map((turma) => {
                     return turma.toJSON();
                 });
-                res.render("index", { alunos: nalunos, car: true, turmas: turmas });
+                res.render("index", { alunos: nalunos, car: true, login:false, turmas: turmas });
             });
         });
 });
@@ -23,5 +23,15 @@ router.get('/', (req, res) => {
 router.get('/carousel', (req, res) => {
     res.render("carousel");
 });
+
+router.get('/', (req, res) => {
+    res.render("login", {login:true});
+});
+
+router.get('/cadlogin', (req, res) => {
+    res.render("cadLogin", {login:true});
+});
+
+
 
 module.exports = router;
